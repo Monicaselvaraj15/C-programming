@@ -12,7 +12,7 @@ int main()
             {
                 printf("%d",j);//print col
              }
-            else if(i + j==n+1 || i==j)
+            else if(i + j==n+1 || i==j)//add row and col equal to n+1 or row equal to col
            {
             printf("%d",j);
            }
