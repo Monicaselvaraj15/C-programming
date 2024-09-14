@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+int gcd_no(unsigned int num1,unsigned int num2)
+{
+    while(num2 != 0)
+    {
+        int temp=num2;
+        num2=num1 % num2;
+        num1=temp;
+    }
+    return num1;
+    
+}
+int main()
+{
+    int num1,num2,result;
+    printf("Enter a number:");
+    scanf("%d%d",&num1,&num2);
+    if(num1 < 0 || num2 < 0)
+    {
+        printf("please enter a valid number:");
+    }
+    else
+    {
+        result=gcd_no(num1,num2);
+    }
+    printf("gcd of two no %d and %d is %d",num1,num2,result);
+    return 0;
+    
+}
