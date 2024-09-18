@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+int reverse_word(char str[],int start,int end)
+{
+       while(start < end)
+       {
+           char temp=str[start];
+           str[start]=str[end];
+           str[end]=temp;
+           start++;
+           end--;
+       }
+      
+}
+int main()
+{
+    char str[100];
+    int start,end;
+    printf("Enter a string:");
+    fgets(str,sizeof(str),stdin);
+    char word[50];
+    printf("Enter a word:");
+    fgets(word,sizeof(word),stdin);
+    
+    char *ptr=strstr(str,word);
+    if(ptr!=NULL)
+    {
+        start=ptr-str;
+        end=start+strlen(word)-1;
+        reverse_word(str,start,end);
+        printf("Modified str is %s",str);
+    }
+    else
+    {
+        printf("the above word is not found in the given string");
+    }
+    
+}
